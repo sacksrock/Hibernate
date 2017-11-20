@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 20, 2017 4:23:37 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="adat_ud2_a04_cartelera1" dynamic-insert="false" dynamic-update="false" mutable="true" name="Peliculas" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="peliculas">
+        <id name="codigo" type="java.lang.Integer">
+            <column name="Codigo"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="titulo" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Titulo" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fecha" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="Fecha" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="presupuesto" optimistic-lock="true" type="double" unique="false">
+            <column name="Presupuesto" not-null="true" precision="8"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="repartos" optimistic-lock="true" sort="unsorted" table="reparto">
+            <key on-delete="noaction">
+                <column name="C_pelicula"/>
+            </key>
+            <one-to-many class="Reparto" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

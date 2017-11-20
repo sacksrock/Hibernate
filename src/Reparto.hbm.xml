@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 20, 2017 4:23:37 PM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="adat_ud2_a04_cartelera1" dynamic-insert="false" dynamic-update="false" mutable="true" name="Reparto" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="reparto">
+        <id name="codigo" type="java.lang.Integer">
+            <column name="Codigo"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Actores" embed-xml="true" fetch="select" insert="true" name="actores" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="C_actor"/>
+        </many-to-one>
+        <many-to-one class="Peliculas" embed-xml="true" fetch="select" insert="true" name="peliculas" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="C_pelicula"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="tipoPapel" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="tipoPapel" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
