@@ -171,7 +171,7 @@ public class Launcher {
 		} else if (respuesta == 3) {
 
 		} else if (respuesta == 4) {
-			System.out.println("¿Que quieres guardar?");
+			System.out.println("¿Que quieres eliminar?");
 			System.out.println("1- Actores: ");
 			System.out.println("2- Peliculas: ");
 			Scanner eliminar = new Scanner(System.in);
